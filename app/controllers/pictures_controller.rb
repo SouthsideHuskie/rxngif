@@ -23,14 +23,7 @@ class PicturesController < ApplicationController
     @picture.save
     redirect_to("http://localhost:3000/all_pictures")
   end
-  def update
-    @picture=Picture.find_by({:id => params[:id]})
-    @picture.caption = params[:caption]
-    @picture.source = params[:source]
-    @picture.save
-    redirect_to("http://localhost:3000/picture_details/<%@picture.id%>")
 
-  end
 
   def delete
     @picture=Picture.find_by({:id => params[:id]})
@@ -40,9 +33,14 @@ class PicturesController < ApplicationController
 
  def edit
     @picture=Picture.find_by({:id => params[:id]})
+
+end
+  def update
+    @picture=Picture.find_by({:id => params[:id]})
     @picture.caption = params[:caption]
     @picture.source = params[:source]
-    #@picture.save
-    #redirect_to("http://localhost:3000/picture_details/<%@picture.id%>")
-end
+    @picture.save
+    redirect_to("http://localhost:3000/all_pictures")
+
+  end
 end
