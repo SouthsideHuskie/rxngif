@@ -1,16 +1,19 @@
 <div class="page-header">
-  <h1>Directors</h1>
+  <h1>All Pictures</h1>
 </div>
 
 <% @picture_all.each do |pic| %>
 
 <div>
 
-<img src="<%= pic.source %>" class="img-responsive" width="200">
+<a href="picture_details/<%=pic.id %>"><img src="<%= pic.source %>" class="img-responsive" width="100" href></a>
 
 <div>
 <%= pic.caption %>
 
 </div>
+</div>
+<div>
+
 </div>
 <% end %>
