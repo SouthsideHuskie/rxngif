@@ -41,7 +41,7 @@ end
     @picture.source = params[:source]
     @picture.save
 
-    redirect_to("http://localhost:3000/picture_details/<% @picture.id %>")
+    redirect_to("http://localhost:3000/all_pictures")
 
   end
 end
